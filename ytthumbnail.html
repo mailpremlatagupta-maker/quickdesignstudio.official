@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Thumbnails | Quick Design Studio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #090610;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: #100b19;
+            border-bottom: 1px solid #49305e;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #c084fc;
+        }
+
+        header nav a {
+            color: #e9d5ff;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 50px 7% 30px;
+        }
+
+        .small-heading {
+            color: #c084fc;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            color: #c9bfd5;
+            line-height: 1.7;
+            max-width: 550px;
+        }
+
+        .designs {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+            padding: 20px 7% 60px;
+        }
+
+        .card {
+            background: #171020;
+            border: 1px solid #392447;
+            border-radius: 14px;
+            padding: 14px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+            box-shadow: 0 0 18px #a855f733;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 9px;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #c9bfd5;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 11px 15px;
+            margin-top: 8px;
+            background: #7c3aed;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .contact-button:hover {
+            background: #a855f7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #a99ab8;
+            border-top: 1px solid #392447;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 35px 5% 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .designs {
+                padding: 15px 5% 40px;
+            }
+
+            header {
+                padding: 18px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="../../index.html" class="logo">
+            QUICK <span>DESIGN STUDIO</span>
+        </a>
+
+        <nav>
+            <a href="../../designs%20page.html">← All Designs</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="small-heading">OUR COLLECTION</div>
+
+        <h1>YouTube Thumbnails.</h1>
+
+        <p>
+            Make your videos stand out with eye-catching
+            thumbnails designed for YouTubers, gamers,
+            and content creators.
+        </p>
+    </section>
+
+    <main class="designs">
+
+        <!-- THUMBNAIL 1 -->
+        <div class="card">
+            <img src="thumbnail1.jpg"
+                 alt="YouTube Thumbnail Design 1">
+
+            <h2>coming soon</h2>
+
+            <p>
+                Bold visuals to give your gaming videos
+                a distinctive look.
+            </p>
+
+            <a href="../../contact%20us.html?design=Gaming%20Thumbnail"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+        <!-- THUMBNAIL 2 -->
+        <div class="card">
+            <img src="thumbnail2.jpg"
+                 alt="YouTube Thumbnail Design 2">
+
+            <h2>coming soon</h2>
+
+            <p>
+                A creative thumbnail for your next
+                YouTube upload.
+            </p>
+
+            <a href="../../contact%20us.html?design=Creator%20Thumbnail"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+        <!-- THUMBNAIL 3 -->
+        <div class="card">
+            <img src="thumbnail3.jpg"
+                 alt="YouTube Thumbnail Design 3">
+
+            <h2>coming soon</h2>
+
+            <p>
+                Get a thumbnail designed around
+                your own ideas.
+            </p>
+
+            <a href="../../contact%20us.html?design=Custom%20Thumbnail"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Quick Design Studio. Made with creativity.
+    </footer>
+
+</body>
+</html>

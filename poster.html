@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poster Designs | Quick Design Studio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #090610;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: #100b19;
+            border-bottom: 1px solid #49305e;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #c084fc;
+        }
+
+        header nav a {
+            color: #e9d5ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        header nav a:hover {
+            color: #c084fc;
+        }
+
+        /* Intro section */
+        .hero {
+            padding: 50px 7% 30px;
+        }
+
+        .small-heading {
+            color: #c084fc;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            color: #c9bfd5;
+            line-height: 1.7;
+            max-width: 550px;
+        }
+
+        /* Poster gallery */
+        .designs {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            padding: 20px 7% 60px;
+        }
+
+        .card {
+            background: #171020;
+            border: 1px solid #392447;
+            border-radius: 14px;
+            padding: 14px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+            box-shadow: 0 0 18px #a855f733;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 9px;
+            background: #26183a;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            margin: 16px 0 8px;
+        }
+
+        .card p {
+            color: #c9bfd5;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Contact button */
+        .contact-button {
+            display: inline-block;
+            padding: 11px 15px;
+            margin-top: 8px;
+            background: #7c3aed;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #a855f7;
+            box-shadow: 0 0 12px #a855f755;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #a99ab8;
+            border-top: 1px solid #392447;
+            font-size: 13px;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .hero {
+                padding: 35px 5% 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .designs {
+                padding: 15px 5% 40px;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="the%20final%20website%20part%201" class="logo">
+            QUICK <span>DESIGN STUDIO</span>
+        </a>
+
+        <nav>
+            <a href="designs%20page.html">
+                ← All Designs
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="small-heading">OUR COLLECTION</div>
+
+        <h1>Poster Designs.</h1>
+
+        <p>
+            Discover creative, eye-catching posters for
+            promotions, gaming, events, and personal projects.
+            Find a design that matches your vision.
+        </p>
+    </section>
+
+    <main class="designs">
+
+        <!-- POSTER 1 -->
+        <div class="card">
+            <img src="poster1.jpg" alt="Poster Design 1">
+
+            <h2>coming soon</h2>
+
+            <p>
+                Bold graphics and dramatic visuals
+                for gaming fans.
+            </p>
+
+            <a href=" contact%20us.html?design=Gaming%20Poster"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+        <!-- POSTER 2 -->
+        <div class="card">
+            <img src="poster2.jpg" alt="Poster Design 2">
+
+            <h2>coming soon</h2>
+
+            <p>
+                Make your product, brand, or promotion
+                stand out.
+            </p>
+
+            <a href=" contact%20us.html?design=Promotional%20Poster"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+        <!-- POSTER 3 -->
+        <div class="card">
+            <img src="poster3.jpg" alt="Poster Design 3">
+
+            <h2>coming soon</h2>
+
+            <p>
+                Unique artwork for your ideas
+                and creative projects.
+            </p>
+
+            <a href=" contact%20us.html?design=Creative%20Poster"
+               class="contact-button">
+                Contact for Price →
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Quick Design Studio. Made with creativity.
+    </footer>
+
+</body>
+</html>

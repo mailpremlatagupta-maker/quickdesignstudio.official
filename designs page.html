@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Designs | Design Studio</title>
+
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("faaa.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 1;
+            z-index: -1;
+            pointer-events: none;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0612;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #4b0082, #170824);
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #f0d9ff;
+        }
+
+        header p, .intro p {
+            color: #d7c2e8;
+        }
+
+        nav {
+            text-align: center;
+            padding: 18px;
+            background: #12091c;
+            border-bottom: 1px solid #492566;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            color: #d8a5ff;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 30px 15px 10px;
+        }
+
+        /* FILTER PANEL */
+        .filters {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 20px;
+            background: #180f22;
+            border: 1px solid #8b5cf6;
+            border-radius: 14px;
+            box-shadow: 0 0 15px #792bb533;
+        }
+
+        .filters h2 {
+            text-align: center;
+            color: #e9d5ff;
+        }
+
+        .filter-group {
+            margin: 20px 0;
+        }
+
+        .filter-group h3 {
+            color: #d8a5ff;
+            font-size: 16px;
+        }
+
+        /* Hide radio circles but keep them usable */
+        .filter-group input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+        }
+
+        .filter-group label {
+            display: inline-block;
+            padding: 10px 14px;
+            margin: 4px;
+            color: white;
+            background: #0b0612;
+            border: 1px solid #70409a;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .filter-group label:hover {
+            border-color: #d8a5ff;
+        }
+
+        .filter-group input:checked + label {
+            background: #8b00ff;
+            border-color: #e9d5ff;
+            box-shadow: 0 0 12px #8b00ff66;
+        }
+
+        .filter-group input:focus-visible + label {
+            outline: 2px solid white;
+        }
+
+        /* PRODUCT GRID */
+        .products {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: #180f22;
+            border: 1px solid #432357;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            border-color: #b56aff;
+            box-shadow: 0 0 18px #792bb555;
+        }
+
+        .product img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .details {
+            padding: 18px;
+        }
+
+        .details h2 {
+            font-size: 20px;
+            margin-top: 0;
+            color: #f0d9ff;
+        }
+
+        .details p {
+            color: #c7b8d4;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #d8a5ff !important;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .buy {
+            display: block;
+            padding: 12px;
+            text-align: center;
+            background: #080510;
+            color: #e9d5ff;
+            border: 1px solid #b56aff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy:hover {
+            background: #8b00ff;
+            color: white;
+            box-shadow: 0 0 15px #b56aff;
+        }
+
+        /* CSS-ONLY FILTER LOGIC */
+
+        /* Category */
+        body:has(#cat-logo:checked)
+        #collection .product:not(.cat-logo),
+        body:has(#cat-poster:checked)
+        #collection .product:not(.cat-poster),
+        body:has(#cat-thumbnail:checked)
+        #collection .product:not(.cat-thumbnail),
+        body:has(#cat-intro:checked)
+        #collection .product:not(.cat-intro) {
+            display: none;
+        }
+
+        /* Price */
+        body:has(#price-low:checked)
+        #collection .product:not(.price-low),
+        body:has(#price-medium:checked)
+        #collection .product:not(.price-medium),
+        body:has(#price-high:checked)
+        #collection .product:not(.price-high) {
+            display: none;
+        }
+
+        /* Style */
+        body:has(#style-neon:checked)
+        #collection .product:not(.style-neon),
+        body:has(#style-minimal:checked)
+        #collection .product:not(.style-minimal),
+        body:has(#style-3d:checked)
+        #collection .product:not(.style-3d) {
+            display: none;
+        }
+
+        .custom {
+            text-align: center;
+            padding: 45px 15px;
+            background: #150b20;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            color: #a99ab8;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .products {
+                padding: 15px;
+            }
+        }
+        .site-header {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+    </style>
+</head>
+
+<body> 
+
+<header class="site-header">
+    <a href="index.html">
+        <img src="quick-design-logo.jpeg"
+             alt="Quick Design Logo"
+             class="logo">
+    </a>
+</header>
+    <header>
+        <h1>OUR DESIGN COLLECTION</h1>
+        <p>Find the perfect design for your next big idea.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#collection">Our Designs</a>
+        <a href="#custom">Custom Designs</a>
+    </nav>
+
+    <section class="intro">
+        <h2>Explore Our Creations ✦</h2>
+        <p>Creative visuals. Unique ideas. Affordable prices.</p>
+    </section>
+
+    <!-- CSS-ONLY FILTERS -->
+    <section class="filters">
+        <h2>✦ Filter Designs</h2>
+
+        <div class="filter-group">
+            <h3>Category</h3>
+
+            <input type="radio" name="category" id="cat-all" checked>
+            <label for="cat-all">All Categories</label>
+
+            <input type="radio" name="category" id="cat-logo">
+            <label for="cat-logo">Logos</label>
+
+            <input type="radio" name="category" id="cat-poster">
+            <label for="cat-poster">Posters</label>
+
+            <input type="radio" name="category" id="cat-thumbnail">
+            <label for="cat-thumbnail">Thumbnails</label>
+
+            <input type="radio" name="category" id="cat-intro">
+            <label for="cat-intro">Video Intros</label>
+        </div>
+
+        <div class="filter-group">
+            <h3>Price</h3>
+
+            <input type="radio" name="price" id="price-all" checked>
+            <label for="price-all">Any Price</label>
+
+            <input type="radio" name="price" id="price-low">
+            <label for="price-low">Under ₹1000</label>
+
+            <input type="radio" name="price" id="price-medium">
+            <label for="price-medium">₹1000–₹3000</label>
+
+            <input type="radio" name="price" id="price-high">
+            <label for="price-high">Above ₹3000 </label>
+        </div>
+
+        <div class="filter-group">
+            <h3>Style</h3>
+
+            <input type="radio" name="style" id="style-all" checked>
+            <label for="style-all">All Styles</label>
+
+            <input type="radio" name="style" id="style-neon">
+            <label for="style-neon">Neon</label>
+
+            <input type="radio" name="style" id="style-minimal">
+            <label for="style-minimal">Minimal</label>
+
+            <input type="radio" name="style" id="style-3d">
+            <label for="style-3d">3D</label>
+        </div>
+    </section>
+
+    <!-- YOUR PRODUCTS -->
+    <section class="products" id="collection">
+
+        <div class="product cat-logo price-low style-neon">
+            <img src="https://placehold.co/600x400/260044/FFFFFF?text=Gaming+Logo"
+                 alt="Gaming logo design">
+            <div class="details">
+                <h2>Gaming Logo</h2>
+                <p>A bold gaming identity.</p>
+                <p>Category: Logo | Style: Neon</p>
+                <a class="buy" href="gamelogo.html">View Design</a>
+            </div>
+        </div>
+
+        <div class="product cat-thumbnail price-medium style-3d">
+            <img src="https://placehold.co/600x400/3b1755/FFFFFF?text=YouTube+Thumbnail"
+                 alt="YouTube thumbnail design">
+            <div class="details">
+                <h2>YouTube Thumbnail</h2>
+                <p>Make your videos more attractive.</p>
+                <p>Category: Thumbnail | Style: 3D</p>
+                <a class="buy" href="ytthumbnail.html">View Design</a>
+            </div>
+        </div>
+
+        <div class="product cat-poster price-low style-minimal">
+            <img src="https://placehold.co/600x400/170b29/FFFFFF?text=Poster+Design"
+                 alt="Poster design">
+            <div class="details">
+                <h2>Poster Design</h2>
+                <p>Eye-catching event posters.</p>
+                <p>Category: Poster | Style: Minimal</p>
+                <a class="buy" href="poster.html">View Design</a>
+            </div>
+        </div>
+
+        <div class="product cat-intro price-high style-3d">
+            <img src="https://placehold.co/600x400/35104d/FFFFFF?text=Video+Intro"
+                 alt="Video intro design">
+            <div class="details">
+                <h2>Video Intro</h2>
+                <p>A stylish opening for your videos.</p>
+                <p>Category: Video Intro | Style: 3D</p>
+                <a class="buy" href="videointros.html">View Design</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="custom" id="custom">
+        <h2>WANT SOMETHING UNIQUE?</h2>
+        <p>Let's create a custom design just for you.</p>
+        <a class="buy" href="/Users/vineetgupta/Desktop/new buisness/ contact us.html">Contact for Price</a>
+    </section>
+
+    <footer>
+        © 2026 Design Studio. All rights reserved.
+    </footer>
+
+</body>
+</html>
+

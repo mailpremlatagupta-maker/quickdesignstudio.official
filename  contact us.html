@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Design Studio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    #29103e 0%,
+                    #100819 50%,
+                    #080510 100%
+                );
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            border-bottom: 1px solid #39214e;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #c084fc;
+        }
+
+        header a:last-child {
+            color: #e9d5ff;
+            text-decoration: none;
+        }
+
+        /* Main contact section */
+        .contact-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 45px auto;
+            padding: 35px;
+            background: rgba(23, 16, 32, 0.95);
+            border: 1px solid #49305e;
+            border-radius: 18px;
+            box-shadow: 0 0 30px rgba(112, 0, 255, 0.12);
+        }
+
+        .small-heading {
+            color: #c084fc;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 12px 0;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #c9bfd5;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            margin-top: 8px;
+            color: #e9d5ff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #49305e;
+            border-radius: 8px;
+            background: #0e0916;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9789a6;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: 2px solid #a855f7;
+            border-color: #a855f7;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Email button */
+        .contact-button {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            border: none;
+            border-radius: 9px;
+            background: #7c3aed;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #a855f7;
+            box-shadow: 0 0 18px rgba(168, 85, 247, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .email-address {
+            margin-top: 25px;
+            text-align: center;
+            color: #c9bfd5;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .email-address a {
+            color: #c084fc;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            color: #c084fc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back:hover,
+        .email-address a:hover {
+            color: white;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: #9789a6;
+            font-size: 13px;
+        }
+
+        /* Phone layout */
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .contact-container {
+                margin: 30px auto;
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="the%20final%20website%20part%201.html">
+            DESIGN<span>STUDIO</span>
+        </a>
+
+        <a href="designs%20page.html">Our Designs</a>
+    </header>
+
+    <main class="contact-container">
+
+        <div class="small-heading">LET'S WORK TOGETHER</div>
+
+        <h1>Contact Us</h1>
+
+        <p class="intro">
+            Interested in one of our designs?
+            Fill in the form below and send us your enquiry.
+            We'll have the details we need to respond to you.
+        </p>
+
+        <form id="contactForm">
+
+            <label for="name">Your Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="customerEmail">Your Email Address</label>
+            <input
+                type="email"
+                id="customerEmail"
+                name="customerEmail"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <label for="design">Which Design Are You Interested In?</label>
+            <select id="design" name="design" required>
+                <option value="">Choose a design category</option>
+                <option value="Gaming Logo">Gaming Logo</option>
+                <option value="Video Intro">Video Intro</option>
+                <option value="YouTube Thumbnail">YouTube Thumbnail</option>
+                <option value="Stream Overlay">Stream Overlay</option>
+                <option value="Other Design">Other Design</option>
+            </select>
+
+            <label for="message">Your Message</label>
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us what you need..."
+                required
+            ></textarea>
+
+            <button type="submit" class="contact-button">
+                ✉️ Send Enquiry by Email
+            </button>
+
+        </form>
+
+        <div class="email-address">
+            Or email us directly at:<br>
+            <a href="mailto:quickdesignstudioofficial@gmail.com">
+                quickdesignstudioofficial@gmail.com
+            </a>
+        </div>
+
+        <a class="back" href="designs%20page.html">
+            ← Back to Designs
+        </a>
+
+    </main>
+
+    <footer>
+        © 2026 Design Studio. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const customerEmail =
+                    document.getElementById("customerEmail").value.trim();
+
+                const design =
+                    document.getElementById("design").value;
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+                const subject = encodeURIComponent(
+                    "Design Enquiry: " + design
+                );
+
+                const body = encodeURIComponent(
+                    "Customer Name: " + name + "\n" +
+                    "Customer Email: " + customerEmail + "\n" +
+                    "Design Requested: " + design + "\n\n" +
+                    "Message:\n" + message
+                );
+
+                window.location.href =
+                    "mailto:quickdesignstudioofficial@gmail.com" +
+                    "?subject=" + subject +
+                    "&body=" + body;
+            }
+        );
+    </script>
+
+</body>
+</html>
+
